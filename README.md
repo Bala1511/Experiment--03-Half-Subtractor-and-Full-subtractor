@@ -33,22 +33,63 @@ Write the detailed procedure here
 
 
 ## Program:
+```
 /*
 Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
+Developed by: BALA MURUGAN.P
+RegisterNumber:  212222230017
 */
+```
 
 ## Output:
+```
+HALF SUB
+
+module halfsub(A,B,Diff,Borrow);
+input A,B;
+output Diff,Borrow;
+wire x;
+xor (Diff, A,B);
+not(x,A);
+and(Borrow,x,B);
+endmodule
+
+
+FULL SUB
+
+module fullsub (A,B,C,Diff,Borrow);
+input A,B,C;
+output Diff,Borrow;
+wire p;
+assign Diff = ((A^B)^C);
+not(p,A);
+assign Borrow = ((p&B)|(p&C)|(B&C));
+endmodule
+```
 
 ## Truthtable
+HALF SUB
 
+![sub1](https://user-images.githubusercontent.com/118680410/234767855-08b01bfb-ea28-4912-a6df-187bdd820877.png)
+
+FULL SUB
+![sub2](https://user-images.githubusercontent.com/118680410/234767862-ec2def1e-3291-4440-90ef-7f92545f7c26.png)
 
 
 ##  RTL realization
+HALF SUB
+
+![subt1](https://user-images.githubusercontent.com/118680410/234768006-fb272396-7acb-4dd5-8497-632f0d816492.png)
+
+FULL SUB
+![subt2](https://user-images.githubusercontent.com/118680410/234768011-7eb736ac-20cf-4123-a1a0-5ec50e573346.png)
 
 
 ## Timing diagram 
+FULLSUB
+![subtt2](https://user-images.githubusercontent.com/118680410/234768076-20786aaf-700b-4c50-96db-1b1024d2501a.png)
+HALF SUB
+![subtt1](https://user-images.githubusercontent.com/118680410/234768074-69b82179-aa83-4392-982d-b8ebe4cf832a.png)
 
 ## Result:
 Thus the half subtractor and full subtractor circuits are designed and the truth tables is verified using quartus software.
